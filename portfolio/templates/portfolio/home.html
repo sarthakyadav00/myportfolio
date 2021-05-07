@@ -1,0 +1,38 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+<div class="container text-center ">
+    <h1 class="alert alert-info"> WELCOME TO MY PORTFOLIO </h1>
+  
+
+<br>
+{% for project in projects  %}
+
+<h1> <u>{{project.title}}</u></h1>
+<br>
+<p>{{project.description}}</p>
+<br>
+<br>
+<img src="{{project.image.url}}" height="490" width="600" >
+<br>
+
+<br>
+
+
+{% if project.url %}
+<a href="{{project.url}}" class="btn btn-primary">My LinkedIn Account</a>
+
+{% endif %}
+
+{% endfor %}
+<br>
+<br>
+{% load static %}
+
+<a href="{% static 'portfolio/syresume.pdf'%}" class="btn btn-success">MY RESUME</a>
+<br>
+<br>
+<a href="{% url 'blog:all_blogs'%}" class="btn btn-danger" >Blogs</a>
+
+</div>
+
+{% endblock content %}

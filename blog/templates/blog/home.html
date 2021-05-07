@@ -1,0 +1,21 @@
+
+<h1>THIS IS THE BLOG PAGE</h1>
+
+<h2>Sarthak has written {{blogs.count}} blog{{blogs.count| pluralize}}</h2>
+
+{% for blog in blogs  %}
+
+ <h2>{{ blog.title }}</h2>
+
+<p>{{ blog.description }}</p>
+
+{{blog.date}}
+
+
+
+
+{% endfor %}
+
+
+
+
